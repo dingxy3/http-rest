@@ -6,6 +6,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import util.RestUtils;
@@ -48,6 +49,16 @@ public class RestClient {
                 .setReadTimeout(READ_TIME_OUT).build();
 
     }
+   /* public RestClient()
+    {
+        SimpleClientHttpRequestFactory httpRequestFactory = new SimpleClientHttpRequestFactory();
+        httpRequestFactory.setConnectTimeout(CONNECT_TIME_OUT);
+        httpRequestFactory.setReadTimeout(READ_TIME_OUT);
+
+        template = new RestTemplate(httpRequestFactory);
+
+
+    }*/
 
 
     /**
